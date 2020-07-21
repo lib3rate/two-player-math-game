@@ -2,26 +2,34 @@
 
 class Game
   def initialize
-    @player1 = Players.new "Player 1"
-    @player2 = Players.new "Player 2"
+    puts "Please enter the first player's name"
+    player_name = ask_for_input
+    @player1 = Players.new "#{player_name}"
+
+    puts "Please enter the second player's name"
+    player_name = ask_for_input
+    @player2 = Players.new "#{player_name}"
+    
     @winner = false
     @current_player = @player1
   end
 
   def start
     while !@winner
-      puts @current_player
       puts "----- NEW TURN -----"
+
       question = Questions.new
       puts "#{@current_player}: #{question.prompt}"
       answer = ask_for_input
+      
       if question.correct?(answer)
         puts "#{@current_player}: YES! You are correct."
       else
         puts "#{@current_player}: Close but no cigar. This was a wrong answer."
         @current_player.reduce_lives
-        puts @current_player.lives
       end
+
+      puts "#{@player1}: #{@player1.lives}/3 vs #{@player2}: #{@player2.lives}/3"
       change_player
       winner?
     end
@@ -55,5 +63,4 @@ end
 def ask_for_input
   print "> "
   input = $stdin.gets.chomp
-  input.to_i
 end

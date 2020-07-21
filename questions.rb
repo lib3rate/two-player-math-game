@@ -6,15 +6,15 @@ class Questions
   def initialize
     @number1 = rand(1..20)
     @number2 = rand(1..20)
-    @answer = @number1 + @number2
+    @correct_answer = @number1 + @number2
   end
 
   def prompt
     "What does #{@number1} plus #{@number2} equal?"
   end
 
-  def correct?(answer)
-    if answer == @answer
+  def correct?(player_answer)
+    if player_answer.to_i == @correct_answer
       true
     else
       false
