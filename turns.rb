@@ -4,26 +4,17 @@ class Turns
   attr_reader :current_player
 
   def initialize
-    @current_player = "#{player1}"
-  end
-
-  def start
-    Questions.print_question
-  end
-
-  def end_game
-    if player1.dead? || player2puts.dead?
-      
-    end
+    @current_player = @player1
+    puts "----- NEW TURN -----"
   end
 
   private
 
   def change_player_turn
-    if @current_player = player1
-      @current_player = player2
+    if @current_player = @player1
+      @current_player = @player2
     else
-      @current_player = player1
+      @current_player = @player1
     end
   end
 end

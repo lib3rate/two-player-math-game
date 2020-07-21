@@ -9,20 +9,22 @@ class Questions
     @answer = @number1 + @number2
   end
 
-  # def generate_number
-  # end
-
   def print_question
-    puts "#{current_player}: What does #{number1} plus #{number2} equal?"
-    print "> "
+    puts "#{@current_player}: What does #{@number1} plus #{@number2} equal?"
   end
 
-  @input = $stdin.gets.chomp
+  def ask_for_input
+    print "> "
+    @input = $stdin.gets.chomp
+  end
 
   def correct?
     if @input == @answer
+      puts "#{@current_player}: YES! You are correct."
       Turns.new
-    else @current_player.wrong_answer
+    else 
+      puts "#{@current_player}: Close but no cigar. This was a wrong answer."
+      Turns.new
     end
   end
 end
