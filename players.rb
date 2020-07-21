@@ -6,4 +6,8 @@ class Players
   def initialize
     @lives = 3
   end
+
+  def dead?
+    if @lives = 0
+  end
 end

@@ -1,8 +1,7 @@
-# All the questions and the answers to them belong to the Turn class.
-# The class also has the functionality to change the answering player.
+# The Turns class has the functionality to change the answering player and control if the game is over.
 
 class Turns
-  attr_reader :question, :answer, :current_player
+  attr_reader :current_player
 
   def initialize
     @current_player = player1
@@ -12,19 +11,7 @@ class Turns
     
   end
 
-  def generate_number
-
-  end
-
-  def print_question
-  
-  end
-
-  def correct?
-
-  end
-
   def end_game
-  
+    puts
   end
 end

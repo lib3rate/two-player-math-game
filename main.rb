@@ -1,4 +1,5 @@
 require './players'
+require './questions'
 require './turns'
 
 player1 = Players.new
