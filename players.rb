@@ -7,7 +7,15 @@ class Players
     @lives = 3
   end
 
+  def wrong_answer
+    @lives -= 1
+  end
+
   def dead?
-    if @lives = 0
+    if @lives == 0
+      true
+    else
+      false
+    end
   end
 end
