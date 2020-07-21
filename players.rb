@@ -3,11 +3,16 @@
 class Players
   attr_reader :lives
 
-  def initialize
+  def initialize(name)
     @lives = 3
+    @name = name
   end
 
-  def wrong_answer
+  def to_s
+    @name
+  end
+
+  def reduce_lives
     @lives -= 1
   end
 
