@@ -4,8 +4,8 @@ class Questions
   attr_writer :input
 
   def initialize
-    @number1 = rand(20)
-    @number2 = rand(20)
+    @number1 = rand(1..20)
+    @number2 = rand(1..20)
     @answer = @number1 + @number2
   end
 
@@ -14,9 +14,10 @@ class Questions
 
   def print_question
     puts "#{current_player}: What does #{number1} plus #{number2} equal?"
+    print "> "
   end
 
-  @input = gets.chomp
+  @input = $stdin.gets.chomp
 
   def correct?
     if @input == @answer
